@@ -1,4 +1,5 @@
 import { useState } from "react"
+import LocalGameScreen from "../Components/LocalGame"
 import Settings from "../Components/Settings"
 
 export default function LocalGame() {
@@ -8,7 +9,9 @@ export default function LocalGame() {
 
 	const startGame = () => {
 		setCurrentState("game")
+		console.log("game")
 	}
+
 	switch (currentState) {
 		case "settings":
 			return <Settings
@@ -19,7 +22,7 @@ export default function LocalGame() {
 				startGame={startGame}
 			/>
 		case "game":
-			return <p>game</p>
+			return <LocalGameScreen numPlayers={numPlayers} numHands={numHands} />
 		default:
 			return <></>
 	}

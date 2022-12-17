@@ -6,8 +6,6 @@ const Holder = styled.div`
 	width: 274px;
 	border: 2px solid black;
 	border-radius: 20px;
-	margin: 20px;
-	padding: 10px;
 
 	display: grid;
 	grid-template-columns: 50px 1fr 50px;
