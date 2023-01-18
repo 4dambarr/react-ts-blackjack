@@ -45,18 +45,12 @@ export default function RoundResult({ round, nextRound }: ResultProps) {
 					<Button text="Next Round" action={nextRound} />
 				</Holder>
 			)
-		case 1:
+		default:
 			return (
 				<Holder>
-					<h2>{typeof winners[0] === "string" ? winners[0] : `Player ${winners[0]}`}</h2>
+					<h2>{winners.map(winner => (typeof winner === "string" ? winner : `Player ${winner[0]}`))} win the round!</h2>
+					<Button text="Next Round" action={nextRound} />
 				</Holder>
 			)
-		default:
-			return <></>
 	}
-	return (
-		<Holder>
-			<h2></h2>
-		</Holder>
-	)
 }

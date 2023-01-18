@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Turn } from "../Constants/CommonInterfaces";
 import { CardType, deck } from "../Constants/Deck";
+import GameResult from "./GameResult";
 import HandScreen from "./HandScreen";
 import PreHandScreen from "./PreHandScreen";
 import RoundResult from "./RoundResult";
@@ -60,6 +61,7 @@ export default function LocalGameScreen({numPlayers, numHands}: GameProps) {
 		setGameState("pre-hand-screen")
 	}
 
+
 	switch (gameState) {
 		case "pre-hand-screen":
 			return <PreHandScreen name={round.length + 1} startRound={() => setGameState("player-hand")} />
@@ -68,7 +70,7 @@ export default function LocalGameScreen({numPlayers, numHands}: GameProps) {
 		case "round-result":
 			return <RoundResult round={round} nextRound={nextRound} />
 		case "game-result":
-			return <p>Game Result</p>
+			return<GameResult game={game} />
 		default:
 			return <></>
 	}
